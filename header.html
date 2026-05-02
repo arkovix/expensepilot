@@ -1,0 +1,51 @@
+
+        <link href="style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Maps&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+        <div class="t">Advertisement</div>
+        <nav>
+            <div class="nav1">
+                <img src="asset/logo.png" title="logo">
+                <h3>Expense Pilot</h3>
+            </div>
+            <div class="nav2">
+                <a href="index.php">Home</a>
+                <a href="about.php">About</a>
+                <a href="pp.php" id="pp"> PrivacyPolicy</a>
+                <a href="service.php">Service</a>
+                <a href="contact.php">Contact</a>
+            </div>
+            <a id="lin" href="login.php">Login</a>
+            <a id="sin" href="signup.php">Register</a>
+            <img class="mimage" onclick="show()" src="asset/menu.png" alt="menu_icon" height="30px" width="30px">
+        </nav>
+        <div class="hide">
+            <ul id="hide">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="service.php">Service</a></li>
+                <li><a href="blog.php">Blog</a></li>
+                <li><a href="pp.php">Privacy Policy</a></li>
+                <li><a href="cp.php">Cookies</a></li>
+                <li><a href="disclaimer.php">Disclaimer</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+        </div>
+        <script>
+            function show(){
+                let s=document.getElementById('hide');
+                if(s.style.display=="none"){
+                    s.style.display="block";
+                }
+                else{
+                    s.style.display="none";
+                }
+            }
+        </script>
+

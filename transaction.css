@@ -1,0 +1,114 @@
+.main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+#menu{
+    display: none;
+}
+.mainta{
+    padding: 7px;
+}
+.up p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    padding: 7px;
+}
+.mainta h1{
+    font-family: "Smokum", serif;
+    font-size: 60px;
+    color: rgb(0, 89, 255);
+    font-weight: 500;
+    padding-left: 15px;
+}
+.tab table th{
+    border-radius: 4px;
+    padding: 10px 30px;
+    margin-left: 5px;
+    background-color: rgba(0, 0, 0, 0.342);
+}
+.tab table{
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 7px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(0, 0, 0, 0.13);
+}
+.tab table td{
+    padding: 10px 7px;
+}
+.down{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.summary{
+    width: auto;
+    height: 150px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.096);
+}
+.summary h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.summary table{
+    padding: 5px;
+    margin-top: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.summary table td:nth-child(2){
+    font-weight: bold;
+}
+.summary td{
+    padding: 7px 15px;
+    border-radius: 3px;
+}
+@media(max-width: 768px){
+    .main{
+        width: 100%;
+        height: auto;
+    }
+    .navt{
+        display: none;
+    }
+    #menu{
+        display: block;
+        border: 2px solid rgb(0, 81, 255);
+        border-radius: 3px;
+        padding: 3px;
+    }
+    .tab table th{
+        font-size: 17px;
+        padding: 5px;
+    }
+    .down{
+        display: flex;
+        flex-direction: column;
+    }
+    .tab td{
+        padding: 0px;
+        font-size: 20px;
+    }
+    .tab{
+        width: 100vw;
+        overflow-x: scroll;
+    }
+    .summary{
+        height: auto;
+        padding: 10px;
+    }
+    .summary h2{
+        font-size: 30px;
+    }
+    .summary table td{
+        font-size: 20px;
+    }
+    .up p{
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,215 @@
+.main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+#menu{
+    display: none;
+}
+.mainbudget{
+    padding: 7px;
+}
+.submain{
+    display: flex;
+    flex-direction: row;
+}
+.card{
+    width: 900px;
+    height: auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 8%;
+    margin-bottom: 20px;
+    margin-left: 13px;
+}
+.subcard{
+    width: 30%;
+    height: auto;
+    padding: 3px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.301),
+        inset 1px 2px 3px rgba(255, 255, 255, 0.288);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgba(0, 255, 21, 0.445);
+    
+}
+.hcard{
+    margin-left: 10px;
+}
+.left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.leftu{
+    width: 90%;
+    height: auto;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.301);
+    margin: auto;
+}
+.leftd{
+    width: 90%;
+    height: auto;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.301);
+    margin: auto;
+}
+.leftd h3{
+    padding: 5px;
+    margin-bottom: 3px;
+    font-family: "Average Sans", sans-serif;
+    font-size: 25px;
+}
+.leftd table{
+    margin: auto;
+    padding: 5px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+table th{
+    padding: 3px;
+    margin-left: 5px;
+}
+.right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.summary{
+    width: 90%;
+    height: auto;
+    padding: 7px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.301);
+    border-radius: 3px;
+}
+.summary .para,.amou{
+    padding: 5px;
+}
+.amou{
+    display: flex;
+    flex-direction: column;
+    
+}
+.summary h3{
+    font-family: "Average Sans", sans-serif;
+    font-size: 25px;
+    padding: 7px;
+}
+.summary p{
+    font-family: sans-serif;
+    font-size: medium;
+    padding: 3px;
+    margin-bottom: 10px;
+    margin-top: 4px;
+}
+.summary b{
+    padding: 7px;
+    font-size: medium;
+}
+.subsum{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.table th,td{
+    padding: 5px;
+}
+.mainbudget h1{
+    font-family: "Smokum", serif;
+    font-size: 60px;
+    color: rgb(0, 89, 255);
+    font-weight: 500;
+    padding-left: 15px;
+}
+.head p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    padding: 7px;
+}
+.mainbudget h2,b{
+    font-family: "Average Sans", sans-serif;
+}
+h3{
+    border-radius: 3px;
+    background-color: rgba(0, 153, 255, 0.562);
+}
+
+@media(max-width: 768px){
+    #menu{
+        display: block;
+        border: 2px solid rgb(0, 81, 255);
+        border-radius: 3px;
+        padding: 3px;
+    }
+    .main{
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
+    }
+    .main .nav5{
+        display: none;
+        z-index: 9999;
+    }
+    .card{
+        width: auto;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .subcard{
+        width: auto;
+        margin: 0px;
+        gap: 0px;  
+    }
+    .submain{
+        width: auto;
+        flex-direction: column;   
+    }
+    .head p{
+        font-size: 18px;
+    }
+    .leftd,.leftu{
+        width: 480px;
+    }
+    .leftd table{
+        font-size: 20px;
+    }
+    .mainbudget b{
+        font-size: 20px;
+    }
+    .right{
+        width: auto;
+    }
+    .summary{
+        width: auto;
+    }
+    .foot{
+        width: 480px;
+    }
+    #piechart_3d{
+        overflow: hidden;
+    }
+    .leftd table th{
+        border-radius: 3px;
+        padding: 7px;
+        background-color: rgba(0, 0, 0, 0.308);
+    }
+    .amu{
+        font-size: 20px;
+    }
+    .para p,b{
+        font-size: 20px;
+    }
+}

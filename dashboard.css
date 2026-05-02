@@ -1,0 +1,130 @@
+.main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+.maindas{
+    padding: 7px;
+}
+h1{
+    font-family: "Story Script", sans-serif;
+    color: rgb(0, 255, 179);
+}
+.da{
+    display: flex;
+    flex-direction: row;
+}
+.welc{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.leftmain .addexp{
+    border-radius: 3px;
+    padding: 10px;
+    margin: 10px 5px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.301);
+}
+.addexp label,input,select{
+    margin: 5px;
+    padding: 5px;
+}
+.addexp button{
+    width: 100%;
+    padding: 10px 0px;
+    margin-top: 7px;
+    border: none;
+    background-color: rgb(0, 153, 255);
+    border-radius: 3px;
+}
+.explist{
+    width: auto;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 30px 5px;
+    box-shadow: 1px 12px 20px rgba(0, 0, 0, 0.301);
+}
+h2{
+    margin: 5px;
+    margin-bottom: 15px;
+    font-family: "Mozilla Text", sans-serif;
+}
+.explist table{
+    height: 400px;
+    padding: 5px;
+    gap: 5px;
+    margin: auto;
+}
+.explist table td,th{
+    padding: 5px;
+    text-align: start;
+}
+.view{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px;
+    margin: 10px 5px;
+    box-shadow: 1px 12px 20px rgba(0, 0, 0, 0.301);
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.scards{
+    border-radius: 3px;
+    padding: 15px;
+    margin: 5px;
+    background: linear-gradient(to bottom right, rgba(0, 174, 255, 0.267), white);
+}
+.chartcat{
+    height: 300px;
+    margin: 10px 5px;
+    box-shadow: 1px 12px 20px rgba(0, 0, 0, 0.301);
+}
+#menu{
+    display: none;
+}
+
+@media(max-width: 768px){
+    .main{
+        position: relative;
+    }
+    #menu{
+        display: block;
+        border-radius: 3px;
+        border: 2px solid rgb(0, 89, 255);
+        padding: 3px;
+    }
+    .main .nav1{
+        display: none;
+
+    }
+    .da{
+        flex-direction: column;
+    }
+    .leftmain .addexp{
+        margin-top: 20px;
+    }
+    h2{
+        margin: 2px;
+        font-size: 25px;
+    }
+    .addexp label,input,select{
+        margin: 10px;
+        
+    }
+    .label{
+        font-size: 18px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-top: 15px;
+    }
+    .leftmain .addexp{
+        padding: 3px;
+    }
+}
