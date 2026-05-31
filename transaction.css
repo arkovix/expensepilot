@@ -69,9 +69,18 @@
     border-radius: 3px;
 }
 @media(max-width: 768px){
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        width: 100vw;
+    }
     .main{
-        width: 100%;
+        width: 99vw;
         height: auto;
+        padding: 0px;
+        margin: 0px;
     }
     .navt{
         display: none;
@@ -83,24 +92,34 @@
         padding: 3px;
     }
     .tab table th{
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.178);
         font-size: 17px;
-        padding: 5px;
+        padding: 10px 5px;
     }
     .down{
         display: flex;
         flex-direction: column;
     }
     .tab td{
+        text-align: center;
         padding: 0px;
         font-size: 20px;
     }
     .tab{
-        width: 100vw;
+        width: 98vw;
         overflow-x: scroll;
     }
+    .tab table{
+        border: 1px solid rgb(0, 162, 255);
+        background: linear-gradient(to bottom right, rgb(168, 203, 255), rgb(178, 227, 255));
+    }
     .summary{
+        width: auto;
         height: auto;
         padding: 10px;
+        border: 1px solid rgb(0, 162, 255);
+        background: linear-gradient(to bottom right, rgb(168, 203, 255), rgb(178, 227, 255));
     }
     .summary h2{
         font-size: 30px;

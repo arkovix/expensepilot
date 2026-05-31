@@ -1,26 +1,28 @@
 <?php 
 include 'db.php';
 session_start();
+$temp=false;
+$tempe=false;
 if(isset($_POST['save'])){
+    $temp=false;
+    $tempe=false;
     $email=$_POST['mail'];
     $pass=$_POST['pass'];
     
     $query=mysqli_query($conn,"SELECT * FROM user WHERE email='$email'");
     if (mysqli_num_rows($query)==1){
-        //echo "Email find";
         $row=mysqli_fetch_assoc($query);
         if(password_verify($pass,$row['password'])){
-            //echo "Correct";
             $_SESSION['id']=$row['id'];
             header('location: dashboard.php');
             exit;
         }
         else{
-            echo "Not matched the password";
+            $temp=true;
         }
     }
     else{
-        echo "Not find email id";
+        $tempe=true;
     }
 }
 ?>
@@ -108,7 +110,12 @@ if(isset($_POST['save'])){
                 <form method="POST">
                     <input type="email" name="mail" id="email" placeholder="Your email"><br>
                     <input type="password" name="pass" id="pass" placeholder="Your Password"><br>
+                    <?php echo "<p style='font-size: 12px'>*You can find your password in your registered email id</p>"?>
                     <button type="submit" name="save">Login</button> 
+                    <?php if($temp){
+                    echo "<p style='color: red'>❌Password not match";}
+                    if($tempe){
+                    echo "<p style='color: red'>❌Email not found";}?>
                 </form>   
                 <p>Don't have any account?<a href="signup.php">Create Now</a></p>
             </div>

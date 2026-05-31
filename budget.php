@@ -36,9 +36,9 @@ while($row = mysqli_fetch_assoc($result)){
         var options = {
           title: 'My Monthly Expenses',
           is3D: true,
-          fontSize: 20,
+          fontSize: 12,
           titleTextStyle: {
-            fontSize: 28,
+            fontSize: 20,
             bold: true
           }
           
@@ -59,6 +59,7 @@ while($row = mysqli_fetch_assoc($result)){
             }
     </script>
 </head>
+<body>
     <div class="main">
         <div class="nav5"><?php include 'nav.html'; ?></div>
         <div class="mainbudget">
@@ -72,7 +73,7 @@ while($row = mysqli_fetch_assoc($result)){
                     <div class="hcard">
                         <b>Budget Amount</b>
                         <h2>₹<?php
-                        $bu=mysqli_fetch_assoc(mysqli_query($conn,"SELECT budget FROM user WHERE id = $id"));
+                        $bu=mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM user WHERE id = $id"));
                         echo $bu['budget'];
                         ?></h2>
                     </div>
@@ -118,64 +119,120 @@ while($row = mysqli_fetch_assoc($result)){
                             </tr>
                             <tr>
                                 <td>Food</td>
-                                <td><?php $cb=$bu['budget']*0.20;
-                                echo $cb;?></td>
+                                <td><?php if($bu['Food']==NULL){
+                    					$bu['Food']=0.20;
+                                        $cb=$bu['Food']*$bu['budget'];
+                                        echo $cb;
+                                    }
+                                    else{
+                                        $cb=$bu['Food'];
+                                        echo $cb;
+                                    }?></td>
                                 <td><?php $sh=$data['Food'] ?? 0; 
                                 echo $sh;?></td>
                                 <td><?php echo $cb-$sh?></td>
                             </tr>
                             <tr>
                                 <td>Housing</td>
-                                <td><?php $cb=$bu['budget']*0.30;
-                                echo $cb;?></td>
+                                <td><?php if($bu['Housing']==NULL){
+                    					$bu['Housing']=0.30;
+                                        $cb=$bu['Housing']*$bu['budget'];
+                                        echo $cb;
+                                    }
+                                    else{
+                                        $cb=$bu['Housing'];
+                                        echo $cb;
+                                    }?></td>
                                 <td><?php $sh=$data['Housing'] ?? 0; 
                                 echo $sh;?></td>
                                 <td><?php echo $cb-$sh?></td>
                             </tr>
                             <tr>
                                 <td>Transportation</td>
-                                <td><?php $cb=$bu['budget']*0.10;
-                                echo $cb;?></td>
+                                <td><?php if($bu['Transportation']==NULL){
+                    					$bu['Transportation']=0.10;
+                                        $cb=$bu['Transportation']*$bu['budget'];
+                                        echo $cb;
+                                    }
+                                    else{
+                                        $cb=$bu['Transportation'];
+                                        echo $cb;
+                                    }?></td>
                                 <td><?php $sh=$data['Transportation'] ?? 0; 
                                 echo $sh;?></td>
                                 <td><?php echo $cb-$sh?></td>
                             </tr>
                             <tr>
                                 <td>Utilities</td>
-                                <td><?php $cb=$bu['budget']*0.10;
-                                echo $cb;?></td>
+                                <td><?php if($bu['Utilities']==NULL){
+                    					$bu['Utilities']=0.10;
+                                        $cb=$bu['Utilities']*$bu['budget'];
+                                        echo $cb;
+                                    }
+                                    else{
+                                        $cb=$bu['Utilities'];
+                                        echo $cb;
+                                    }?></td>
                                 <td><?php $sh=$data['Utilities'] ?? 0; 
                                 echo $sh;?></td>
                                 <td><?php echo $cb-$sh?></td>
                             </tr>
                             <tr>
                                 <td>Healthcare</td>
-                                <td><?php $cb=$bu['budget']*0.05;
-                                echo $cb;?></td>
+                                <td><?php if($bu['Healthcare']==NULL){
+                    					$bu['Healthcare']=0.05;
+                                        $cb=$bu['Healthcare']*$bu['budget'];
+                                        echo $cb;
+                                    }
+                                    else{
+                                        $cb=$bu['Healthcare'];
+                                        echo $cb;
+                                    }?></td>
                                 <td><?php $sh=$data['Healthcare'] ?? 0; 
                                 echo $sh;?></td>
                                 <td><?php echo $cb-$sh?></td>
                             </tr>
                             <tr>
                                 <td>Investment</td>
-                                <td><?php $cb=$bu['budget']*0.10;
-                                echo $cb;?></td>
+                                <td><?php if($bu['Investment']==NULL){
+                    					$bu['Investment']=0.10;
+                                        $cb=$bu['Investment']*$bu['budget'];
+                                        echo $cb;
+                                    }
+                                    else{
+                                        $cb=$bu['Investment'];
+                                        echo $cb;
+                                    }?></td>
                                 <td><?php $sh=$data['Investment'] ?? 0; 
                                 echo $sh;?></td>
                                 <td><?php echo $cb-$sh?></td>
                             </tr>
                             <tr>
                                 <td>Entertainment</td>
-                                <td><?php $cb=$bu['budget']*0.10;
-                                echo $cb; ?></td>
+                                <td><?php if($bu['Entertainment']==NULL){
+                    					$bu['Entertainment']=0.10;
+                                        $cb=$bu['Entertainment']*$bu['budget'];
+                                        echo $cb;
+                                    }
+                                    else{
+                                        $cb=$bu['Entertainment'];
+                                        echo $cb;
+                                    }?></td>
                                 <td><?php $sh= $data['Entertainment'] ?? 0; 
                                 echo $sh;?></td>
                                 <td><?php echo $cb-$sh?></td>
                             </tr>
                             <tr>
                                 <td>Others</td>
-                                <td><?php  $cb=$bu['budget']*0.05;
-                                echo $cb;?></td>
+                                <td><?php if($bu['Others']==NULL){
+                    					$bu['Others']=0.05;
+                                        $cb=$bu['Others']*$bu['budget'];
+                                        echo $cb;
+                                    }
+                                    else{
+                                        $cb=$bu['Others'];
+                                        echo $cb;
+                                    }?></td>
                                 <td><?php
                                 $sh=$data['Others'] ?? 0;
                                 echo $sh; ?></td>

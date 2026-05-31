@@ -144,6 +144,13 @@ h3{
 }
 
 @media(max-width: 768px){
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        width: 100vw;
+    }
     #menu{
         display: block;
         border: 2px solid rgb(0, 81, 255);
@@ -152,7 +159,7 @@ h3{
     }
     .main{
         position: relative;
-        width: 100%;
+        width: 100vw;
         height: auto;
         margin: 0px;
         padding: 0px;
@@ -162,7 +169,7 @@ h3{
         z-index: 9999;
     }
     .card{
-        width: auto;
+        width: 95vw;
         margin: 0px;
         display: flex;
         flex-direction: column;
@@ -178,33 +185,40 @@ h3{
         flex-direction: column;   
     }
     .head p{
-        font-size: 18px;
+        width: auto;
+        font-size: 16px;
     }
     .leftd,.leftu{
-        width: 480px;
+        width: 95vw;
+        border: 1px solid blue;
     }
     .leftd table{
+        padding: 0px;
         font-size: 20px;
+        margin: 0px;
     }
     .mainbudget b{
         font-size: 20px;
     }
-    .right{
-        width: auto;
+    .right,.left{
+        width: 98vw;
     }
     .summary{
+        margin-top: 10px;
+        border: 1px solid blue;
         width: auto;
     }
     .foot{
-        width: 480px;
+        width: 98vw;
     }
     #piechart_3d{
         overflow: hidden;
     }
     .leftd table th{
         border-radius: 3px;
-        padding: 7px;
+        padding: 7px 4px;
         background-color: rgba(0, 0, 0, 0.308);
+        font-size: 15px;
     }
     .amu{
         font-size: 20px;

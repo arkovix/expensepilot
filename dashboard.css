@@ -92,8 +92,19 @@ h2{
 }
 
 @media(max-width: 768px){
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        width: 100vw;
+    }
     .main{
+        min-width: 90vw;
         position: relative;
+    }
+    .welc{
+        width: 96vw;
     }
     #menu{
         display: block;
@@ -103,28 +114,57 @@ h2{
     }
     .main .nav1{
         display: none;
-
     }
     .da{
         flex-direction: column;
     }
-    .leftmain .addexp{
+    .addexp{
+        width: auto;
         margin-top: 20px;
+        padding: 3px;
+        border: 1px solid rgb(0, 162, 255);
+        background: linear-gradient(to bottom right, rgb(168, 203, 255), rgb(178, 227, 255));
+        font-family: sans-serif;
+        font-size: 20px;
+    }
+    .leftmain{
+        width: 95vw;
+        margin-top: 20px;
+        padding: 3px;
+    }
+    .explist, .view, .chartcat{
+        width: auto;
+        border: 1px solid rgb(0, 162, 255);
+        background: linear-gradient(to bottom right, rgb(168, 203, 255), rgb(178, 227, 255));
     }
     h2{
         margin: 2px;
-        font-size: 25px;
+        font-size: 30px;
+        text-decoration: underline;
     }
     .addexp label,input,select{
-        margin: 10px;
-        
+        margin: 10px;  
     }
     .label{
         font-size: 18px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         margin-top: 15px;
     }
-    .leftmain .addexp{
-        padding: 3px;
+    button{
+        font-size: 20px;
+    }
+    .explist table{
+        width: auto;
+        height: auto;        
+    }
+    table th,td{
+        border-radius: 5px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.178);
+        box-shadow: inset 0px 2px 5px rgba(255, 255, 255, 0.507);
+        font-family: sans-serif;
+    }
+    .scards p{
+        font-family: sans-serif;
     }
 }

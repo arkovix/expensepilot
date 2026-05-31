@@ -1,6 +1,17 @@
 <?php 
 include 'db.php';
 
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader (created by composer, not included with PHPMailer)
+require 'phpmailer/Exception.php';
+require 'phpmailer/PHPMailer.php';
+require 'phpmailer/SMTP.php';
+$temp=false;
 if(isset($_POST['save'])){
     $fname=$_POST['fname'];
     $lname=$_POST['lname'];
@@ -8,11 +19,49 @@ if(isset($_POST['save'])){
     $inc=$_POST['insource'];
     $budg=$_POST['budget'];
     $password=$_POST['passw'];
-    $vpass=password_hash($password, PASSWORD_BCRYPT);
-    $query=mysqli_query($conn, "INSERT INTO user (`fname`,`lname`,`email`,`income`,`budget`,`password`) VALUES ('$fname','$lname','$email','$inc','$budg','$vpass')");
-    if($query){
-        header('location: login.php');
-        exit();
+    $check = mysqli_query($conn, "SELECT * FROM `user` WHERE email='$email'");
+    if(mysqli_num_rows($check) > 0){
+        $temp = true;
+    }
+    else{
+        $vpass=password_hash($password, PASSWORD_BCRYPT);
+        $query=mysqli_query($conn, "INSERT INTO user (`fname`,`lname`,`email`,`income`,`budget`,`password`) VALUES ('$fname','$lname','$email','$inc','$budg','$vpass')");
+        if($query){
+            //Create an instance; passing `true` enables exceptions
+                $mail = new PHPMailer(true);
+
+                try {
+                    //Server settings
+                    $mail->isSMTP();                                            //Send using SMTP
+                    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                    $mail->Username   = 'arkovix7@gmail.com';                     //SMTP username
+                    $mail->Password   = 'dmrdssixbkawblbi';                               //SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+                    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+                    //Recipients
+                    $mail->setFrom('arkovix7@gmail.com', 'ExpensePilot');
+                    $mail->addAddress($email);     //Add a recipient
+
+                    //Content
+                    $mail->isHTML(true);                                  //Set email format to HTML
+                    $mail->Subject = 'Registration Success in ExpensePilot';
+                    $mail->Body    = "Welcome to ExpensePilot <br>
+                    				<h3>Account Details</h3>
+                                    <p><b>Name:</b> $fname $lname</p>
+                                    <p><b>Password:</b> $password</p>
+                                    <p><h4>Now you can easily control your expenses</h4></p>";
+                    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+                    $mail->send();
+                } catch (Exception $e) {
+                    echo "<script>alert('Email could not be sent. Mailer Error: {$mail->ErrorInfo}')</script>";
+                }
+
+            header('location: login.php');
+            exit();
+        }
     }
 }
 ?>
@@ -151,7 +200,11 @@ if(isset($_POST['save'])){
                     <input type="num" id="mb" name="budget" placeholder="Approx monthly budget" required><br>
                     <label for="pass">Password:</label>
                     <input type="password" id="pass" name="passw" placeholder="Your Password" required><br>
+                    <?php echo "<p style='color: red'>Please mind the password carefully!<br>Next time without login you cannot change the password and not use the same email id</p>" ?><br>
                     <button type="submit" name="save">Register</button>
+                    <?php
+                    if($temp){
+                    echo "<p style='color: red'>Email id already registered!<br>Please login or enter another email!</p>"; }?>
                 </form>
                 <p>Already have an account?<a href="login.php">Login Now</a></p>
             </div>
