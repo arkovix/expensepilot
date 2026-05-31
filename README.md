@@ -2,12 +2,12 @@
 ExpensePilot is a simple and user-friendly expense tracking web application that helps users to manage their daily expenses and controll extra expenses through catagorized monthly budget system
 
 ## Features
-> User registration and login
-> Add, Edit and Delete expenses
-> Track daily expenses with charts
-> Catagorized spending with budget
-> Expense overview dashboard
-> Responsive design for Mobile
+1 User registration and login
+2 Add, Edit and Delete expenses
+3 Track daily expenses with charts
+4 Catagorized spending with budget
+5 Expense overview dashboard
+6 Responsive design for Mobile
 
 ## Tech stack
 > Frontend: HTML, CSS, JAVASCRIPT
